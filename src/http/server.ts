@@ -7,6 +7,7 @@ import fastifyWebsocket from '@fastify/websocket'
 import { pollResults } from '../ws/poll-results'
 
 const app = fastify()
+const PORT = Number(process.env.APPLICATION_PORT) || 3333
 
 void app.register(cookie, {
   secret: 'pools-app-nlw',
@@ -21,4 +22,4 @@ void app.register(voteOnPoll)
 
 void app.register(pollResults)
 
-app.listen(({ port: 3333 })).then(() => { console.log('Server is running on port 3333') }).catch(error => { console.error(error) })
+app.listen(({ port: PORT })).then(() => { console.log(`Server running on port ${PORT}`) }).catch(error => { console.error(error) })
