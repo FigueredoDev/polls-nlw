@@ -1,6 +1,8 @@
 {
     "cSpell.words": [
         "fastify",
-        "zincrby"
+        "WITHSCORES",
+        "zincrby",
+        "zrange"
     ]
 }
